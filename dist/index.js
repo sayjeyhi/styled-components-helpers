@@ -612,6 +612,20 @@ function lighten(color, percent) {
     var BO = NB.toString(16).length === 1 ? "0" + NB.toString(16) : NB.toString(16);
     return "#" + RO + GO + BO;
 }
+(function (BreakpointEnum) {
+    BreakpointEnum["mobile"] = "mobile";
+    BreakpointEnum["tablet"] = "tablet";
+    BreakpointEnum["desktop"] = "desktop";
+    BreakpointEnum["xxs"] = "xxs";
+    BreakpointEnum["xs"] = "xs";
+    BreakpointEnum["sm"] = "sm";
+    BreakpointEnum["md"] = "md";
+    BreakpointEnum["lg"] = "lg";
+    BreakpointEnum["xl"] = "xl";
+    BreakpointEnum["xxl"] = "xxl";
+    BreakpointEnum["landscape"] = "landscape";
+    BreakpointEnum["portrait"] = "portrait";
+})(exports.BreakpointEnum || (exports.BreakpointEnum = {}));
 var templateObject_1$1;
 
 exports.hexToRgb = hexToRgb;

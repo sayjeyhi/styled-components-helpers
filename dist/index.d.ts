@@ -179,4 +179,18 @@ export declare const makeRgbaFromTheme: (color: string, opacity: number) => (pro
  */
 export declare const makeRgbaFromProp: (color: string, opacity: number) => (props: PredictedProp) => string;
 export declare function lighten(color: string, percent: number): string;
+export declare enum BreakpointEnum {
+    mobile = "mobile",
+    tablet = "tablet",
+    desktop = "desktop",
+    xxs = "xxs",
+    xs = "xs",
+    sm = "sm",
+    md = "md",
+    lg = "lg",
+    xl = "xl",
+    xxl = "xxl",
+    landscape = "landscape",
+    portrait = "portrait"
+}
 export {};

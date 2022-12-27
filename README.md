@@ -1,4 +1,4 @@
-# Styled component helpers
+# 🦊 Styled component helpers
 > A collection of styled component helpers
 
 ## Install
@@ -66,7 +66,3 @@ export const StyledCircle = styled.div`
 ## License
 
 MIT
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).

@@ -606,7 +606,22 @@ function lighten(color, percent) {
     var BO = NB.toString(16).length === 1 ? "0" + NB.toString(16) : NB.toString(16);
     return "#" + RO + GO + BO;
 }
+var BreakpointEnum;
+(function (BreakpointEnum) {
+    BreakpointEnum["mobile"] = "mobile";
+    BreakpointEnum["tablet"] = "tablet";
+    BreakpointEnum["desktop"] = "desktop";
+    BreakpointEnum["xxs"] = "xxs";
+    BreakpointEnum["xs"] = "xs";
+    BreakpointEnum["sm"] = "sm";
+    BreakpointEnum["md"] = "md";
+    BreakpointEnum["lg"] = "lg";
+    BreakpointEnum["xl"] = "xl";
+    BreakpointEnum["xxl"] = "xxl";
+    BreakpointEnum["landscape"] = "landscape";
+    BreakpointEnum["portrait"] = "portrait";
+})(BreakpointEnum || (BreakpointEnum = {}));
 var templateObject_1$1;
 
-export { hexToRgb, ifProp, inDesktop, inGreaterThan, inLessThan, inMobile, inMobileOrTablet, inOnlyAndroid, inOnlyIOS, inOnlyLg, inOnlyMd, inOnlySm, inOnlyXXl, inOnlyXl, inOnlyXs, inOnlyXxs, inRange, inTablet, inTabletOrMobile, lighten, makeRgba, makeRgbaFromProp, makeRgbaFromTheme, prop, theme };
+export { BreakpointEnum, hexToRgb, ifProp, inDesktop, inGreaterThan, inLessThan, inMobile, inMobileOrTablet, inOnlyAndroid, inOnlyIOS, inOnlyLg, inOnlyMd, inOnlySm, inOnlyXXl, inOnlyXl, inOnlyXs, inOnlyXxs, inRange, inTablet, inTabletOrMobile, lighten, makeRgba, makeRgbaFromProp, makeRgbaFromTheme, prop, theme };
 //# sourceMappingURL=index.es.js.map
