@@ -11,23 +11,45 @@ npm install --save styled-components-helpers
 
 ```ts
 import styled from "styled-components";
-import { prop, theme, ifProp, makeRgbaFromTheme, inLessThan } from "styled-components-helpers";
+import { prop, ifProp, inLessThan, theme } from "styled-components-helpers";
 
-export const StyledCircle = styled.div`
-  border-radius: 50%;
-  background-color: ${theme("white")};
-  border: 1px solid ${prop("$borderRadius")};
-  height: ${ifProp("$isSmall", "24px", "48px")};
+export default styled.section`
+  padding: 4em;
+  text-align: center;
+  background: papayawhip;
+  border-radius: ${prop("$borderRadius")};
+  padding: ${ifProp("$isSmall", "24px", "48px")};
 
-  a {
-    color: ${makeRgbaFromTheme("black", 0.65)};
+  > p {
+    font-size: 18px;
+    color: ${ifProp(
+      "$isSmall",
+      theme("darkDisabled"),
+      ifProp("$isDark", theme("disabledNote"), prop("$noteColor", "#323232"))
+    )};
   }
 
-  ${inLessThan("md")`
-    min-width: 20px;
-    height: 20px;
-  `};
+  ${inLessThan("xs")`
+    background: #ccc;
+  `}
 `;
+
+```
+And the `App.tsx` file:
+
+```tsx
+import React from "react";
+import { render } from "react-dom";
+import Wrapper from "./Wrapper";
+
+const App = () => (
+  <Wrapper $borderRadius="20px" $isSmall={false}>
+    <p>Hello World, this is my first styled component!</p>
+  </Wrapper>
+);
+
+render(<App />, document.getElementById("root"));
+
 ```
 
 ## Complex condition
@@ -53,7 +75,6 @@ export const StyledCircle = styled.div`
   ${inGreaterThan(BreakpointEnum.md)`
     overflow: hidden;
     margin-right: 1rem;
-    ${FlexboxEnum.horizontalLeftRow}
   `}
 `;
 
